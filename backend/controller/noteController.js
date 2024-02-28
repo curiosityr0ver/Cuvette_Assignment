@@ -15,6 +15,15 @@ const allNotes = asyncHandler(async (req, res) => {
     res.send(notes);
 });
 
+//@description     Get or Search all notes of a given group
+//@route           GET /api/note?search=
+//@access          Public
+const allGroupNotes = asyncHandler(async (req, res) => {
+    const group = req.params.group;
+    const notes = await Note.find({ group: group });
+    res.send(notes);
+});
+
 //@description     Register new note
 //@route           POST /api/note/
 //@access          Public
@@ -89,4 +98,4 @@ const deleteNote = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { allNotes, createNote, updateNote, deleteNote };
+module.exports = { allNotes, allGroupNotes, createNote, updateNote, deleteNote };
