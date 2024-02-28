@@ -37,7 +37,6 @@ const MyNotes = () => {
 
   const fetchGroups = () => {
     notes.forEach(note => {
-      console.log(note.color);
     });
     const res = [...new Set(notes.map(note => note.group))];
     // res.forEach(r => {
