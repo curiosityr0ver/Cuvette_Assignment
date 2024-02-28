@@ -2,9 +2,9 @@ import { AddIcon } from "@chakra-ui/icons";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import NewNoteModal from "./miscellaneous/NewNoteModal";
-import { Button, IconButton } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { NoteState } from "../context/NoteProvider";
 import { Avatar } from "@chakra-ui/avatar";
 import ScrollableFeed from 'react-scrollable-feed';
@@ -21,8 +21,6 @@ const MyNotes = () => {
       const { data } = await axios.get("https://task-manager-backend-production-81bc.up.railway.app/api/note");
       // const { data } = await axios.get("http://localhost:5000/api/note");
       setNotes(data);
-      // console.log(data);
-      // console.log([...new Set(data.map(note => note.group))]);
 
     } catch (error) {
       console.log(error);

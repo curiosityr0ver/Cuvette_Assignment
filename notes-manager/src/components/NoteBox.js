@@ -8,7 +8,6 @@ import SideDrawer from "../components/miscellaneous/SideDrawer";
 const Notebox = () => {
   const { selectedGroup } = NoteState();
   // console.log(selectedGroup);
-  // console.log(selectedGroup);
 
   return (
     <Box
